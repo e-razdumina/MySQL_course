@@ -73,20 +73,32 @@ VALUES
 -- Task 1
 -- Составьте список пользователей users, которые осуществили хотя бы один заказ orders в интернет магазине.
 
-SELECT id, name 
-FROM users
-WHERE id IN (SELECT user_id FROM orders);
+SELECT
+  users.id,
+  users.name,
+  orders.user_id
+FROM
+  users 
+JOIN
+  orders 
+WHERE
+  users.id = orders.user_id;
 
 -- Task 2
 -- Выведите список товаров products и разделов catalogs, который соответствует товару.
 
-SELECT 
-id,
-name,
-price,
-(SELECT name FROM catalogs WHERE products.catalog_id = catalogs.id) AS catalog
-FROM products;
-  
+
+SELECT
+  products.id,
+  products.name,
+  products.price,
+  catalogs.id AS catalogs
+FROM
+  products 
+JOIN
+  catalogs 
+WHERE
+  products.catalog_id = catalogs.id;
 
 
 
