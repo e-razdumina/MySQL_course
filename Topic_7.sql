@@ -81,7 +81,7 @@ FROM
   users 
 JOIN
   orders 
-WHERE
+ON
   users.id = orders.user_id;
 
 -- Task 2
@@ -97,7 +97,7 @@ FROM
   products 
 JOIN
   catalogs 
-WHERE
+ON
   products.catalog_id = catalogs.id;
 
 
