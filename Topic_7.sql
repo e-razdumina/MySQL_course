@@ -84,7 +84,7 @@ JOIN
 ON
   users.id = orders.user_id;
 
--- Task 2
+-- Task 2.
 -- Выведите список товаров products и разделов catalogs, который соответствует товару.
 
 
